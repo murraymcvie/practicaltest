@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>News</title>
+        <style>
+            body {
+                background-color: #ffff00;
+            }
+            h1 {
+                text-align: center;
+            }
+        </style>
+    </head>
+<body>
+        <h1>School News</h1>
+
+    <div>
+        {% if pagelist %}
+         {% for page in pagelist %}
+         <h2>{{page.title}}</h2>
+         <p><i>by {{page.author}}. &emsp; {{page.date}}</i></p>
+         <p>{{page.description}}</p><br><br>
+         {% endfor %}
+         {% else %}
+         <strong>No news available</strong>
+         {% endif %}
+
+    </div>
+
+
+    </body>
+</html>
